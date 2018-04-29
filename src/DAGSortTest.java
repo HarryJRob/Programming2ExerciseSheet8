@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 //Tests start at line 175
 @RunWith(Enclosed.class)
 public class DAGSortTest {
-	//Methods used for test
+	//Methods used for the tests
 	
 	//Generate a random directed, acyclic adjacency list
 	private static int[][] generateRandomAdjList(int numberOfNodes) {
@@ -174,12 +174,13 @@ public class DAGSortTest {
 	
 	//Testing code:
 	
+	//Sort Tests
 	@RunWith(Parameterized.class)
-	public static class ParameterisedTests {
+	public static class ParameterisedSortTests {
 		
 		int[][] testDAG;
 		
-	    public ParameterisedTests(int[][] input) {
+	    public ParameterisedSortTests(int[][] input) {
 	    	testDAG = input;
 	    }
 		
@@ -205,7 +206,8 @@ public class DAGSortTest {
 		
 	}
 	
-	public static class UnparameterisedTests {
+	//Exception Tests
+	public static class UnparameterisedExceptionTests {
 		
 		@Test(expected = CycleDetectedException.class)
 		public void DGCycleTest() throws CycleDetectedException, InvalidNodeException {
